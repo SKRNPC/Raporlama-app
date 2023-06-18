@@ -4,6 +4,7 @@ import GlobalContext from './GlobalContext'
 
 export default function ContextWrapper(props) {
     const [showEventModal, setShowEventModal]=useState(false);
+    const[showLaborantModal, setShowLaborantModal]= useState(false)
     const [selectedFile, setSelectedFile] = useState(null);
     const [value, setValue] = useState({ 
       startDate: new Date(), 
@@ -17,7 +18,9 @@ export default function ContextWrapper(props) {
         selectedFile,
         setSelectedFile,
         value,
-        setValue
+        setValue,
+        showLaborantModal,
+        setShowLaborantModal
     
     }}>
       {props.children}

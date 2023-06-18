@@ -48,7 +48,7 @@ export default function Modal() {
                     className="pt-2 pl-2 border-0 text-gray-700 font-semibold pb-1 w-full border-b-2 border-gray-400 focus:outline-none focus:ring-1 focus:border-blue-200"
                 />
                 <input 
-                    type="text"
+                    type="number"
                     name='id'
                     placeholder='Hastanın Kimlik numarası'
                     required

@@ -9,6 +9,8 @@ const GlobalContext = React.createContext({
     startDate: new Date(),
   },
   setValue: () => {},
+  showLaborantModal: false,
+  setShowLaborantModal: () => {},
 });
 
 export default GlobalContext;
