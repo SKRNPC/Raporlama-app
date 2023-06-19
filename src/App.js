@@ -2,11 +2,9 @@ import './App.css';
 import React, { useContext} from 'react';
 import Modal from './components/Modal';
 import GlobalContext from './context/GlobalContext';
-import CreateButton from './components/CreateButton';
 import Header from './components/Header';
-import AddLaborantButton from './components/AddLaborantButton';
 import LaborantModal from './components/LaborantModal';
-
+import SideBar from './components/SideBar';
 
 function App() {
   const{showEventModal, showLaborantModal}=useContext(GlobalContext)
@@ -16,11 +14,13 @@ function App() {
       {showEventModal && <Modal/>}
       {showLaborantModal && <LaborantModal/>}
       
-     <div className="h-screen flex flex-col bg-blue-100">
+      <div  className="h-screen flex flex-col bg-blue-100">
       <Header/>
-      <CreateButton/>
-      <AddLaborantButton/>
+      <div className="flex flex-1">
+      <SideBar/>
       </div>
+      </div>
+      
      
       
     </React.Fragment>

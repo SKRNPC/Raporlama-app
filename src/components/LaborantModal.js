@@ -54,9 +54,15 @@ export default function LaborantModal() {
                     onInput={handleInputChange}
                     className="pt-2 pl-2 border-0 text-gray-700 font-semibold pb-1 w-full border-b-2 border-gray-400 focus:outline-none focus:ring-1 focus:border-blue-200"
                 />
-
                 </div>
             </div>
+            <footer className=' flex justify-end border-t p-3 mt-5'>
+                <button
+                    type='submit' 
+                    className='bg-yellow-200 hover:bg-yellow-400 px-6 py-2 rounded text-amber-900'>
+                    Kaydet
+                </button>
+            </footer>
         </form>
     </div>
   )
