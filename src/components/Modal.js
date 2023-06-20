@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import GlobalContext from '../context/GlobalContext'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -6,7 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function Modal() {
     const{setShowEventModal,selectedFile, setSelectedFile, value, setValue}= useContext(GlobalContext)
-  
+    const[inputValue, setInputValue] = useState('');
+    
     const handleModalClose = () => {
         setSelectedFile(null);
         setShowEventModal(false);
@@ -14,6 +15,14 @@ export default function Modal() {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);
+      };
+      const handleInputChange = (event) => {
+        const input = event.target.value;
+        if (input.length > 11) {
+          setInputValue(input.slice(0, 11));
+        } else {
+          setInputValue(input);
+        }
       };
     
     return (
@@ -52,6 +61,10 @@ export default function Modal() {
                     name='id'
                     placeholder='Hastanın Kimlik numarası'
                     required
+                    minLength={11}
+                    maxLength={11}
+                    value={inputValue}
+                    onInput={handleInputChange}
                     className="pt-2 pl-2 border-0 text-gray-700 font-semibold pb-1 w-full border-b-2 border-gray-400 focus:outline-none focus:ring-1 focus:border-blue-200"
                 />
                 <input 
